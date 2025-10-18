@@ -177,5 +177,3 @@ Exemplo: testes rodando no modo interativo
 Este projeto é de uso livre para fins educacionais e está licenciado sob a **GNU GENERAL PUBLIC LICENSE v3.0**.
 
 ![Licença](https://img.shields.io/badge/License-GPLv3-blue.svg)
-
-```
