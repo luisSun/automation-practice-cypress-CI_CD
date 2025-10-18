@@ -156,11 +156,7 @@ npx cypress run
 
 ## 📸 Exemplo de Execução
 
-Você pode incluir aqui prints do Cypress em execução, como modo interativo ou headless:
-
-```
-Exemplo: testes rodando no modo interativo
-```
+![Resultado](./images/teste_final.jpg)
 
 ---
 
