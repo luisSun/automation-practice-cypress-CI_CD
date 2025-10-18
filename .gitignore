@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+
+# IDEs e sistema operacional
+.vscode/
+.DS_Store
+.env
