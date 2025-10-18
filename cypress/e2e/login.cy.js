@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import CommomPages from '../support/pages/common_pages'
+import CommonPages from '../support/pages/common_pages'
 import LoginPages from '../support/pages/login_page.js'
 import { dataSelections as data } from '../support/elemments/registerElements.js';
 
@@ -7,16 +7,17 @@ import { dataSelections as data } from '../support/elemments/registerElements.js
 
 describe('Teste de Login', () => {
   beforeEach(() => {
-    CommomPages.visityPageLogin()
+    CommonPages.visityPageLogin()
   });
 
-  it('Login em Branco', () => {
+  it('Campos de login em branco', () => {
     LoginPages.clickBtn(data.btn.loginBtn)
 
     LoginPages.errorMsg(data.fields.erroLogin, data.msg.erroLoginEmail)
   });
+  
 
-  it.only('Email em branco', () => {
+  it('Campo de Email em branco', () => {
     for (let contador = 1; contador <= 2; contador++) {
       cy.log(`Execução número: ${contador}`);
 
@@ -29,7 +30,7 @@ describe('Teste de Login', () => {
     }
   });
 
-  it('Email invalido', () => {
+  it('Campo de Email com dados invalidos', () => {
 
     LoginPages.fillField(data.fields.nameField, data.regUser.emailInvali)
     LoginPages.fillField(data.fields.passField, data.regUser.passwordValid)
@@ -39,7 +40,7 @@ describe('Teste de Login', () => {
   });
 
 
-  it('Senha em branco', () => {
+  it('Campo de Senha em branco', () => {
 
     LoginPages.fillField(data.fields.nameField, data.regUser.emailValid)
     LoginPages.emptyField(data.fields.passField)
@@ -48,7 +49,7 @@ describe('Teste de Login', () => {
     LoginPages.errorMsg(data.fields.erroLogin, data.msg.erroLoginPass)
   });
 
-  it('Senha invalido', () => {
+  it('Campo de Senha com dados invalidos', () => {
     LoginPages.fillField(data.fields.nameField, data.regUser.emailValid)
     LoginPages.fillField(data.fields.passField, data.regUser.passwordInvalid)
 
@@ -56,7 +57,7 @@ describe('Teste de Login', () => {
     LoginPages.errorMsg(data.fields.erroLogin, data.msg.erroLoginPass)
   });
 
-  it('Sucesso', () => {
+  it('Sucesso de Login', () => {
 
     LoginPages.fillField(data.fields.nameField, data.regUser.emailValid)
     LoginPages.fillField(data.fields.passField, data.regUser.passwordValid)

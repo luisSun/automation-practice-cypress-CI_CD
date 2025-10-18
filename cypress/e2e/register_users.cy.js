@@ -4,9 +4,19 @@ import RegisterPage from "../support/pages/register_page.js"
 import { dataSelections as data } from '../support/elemments/registerElements.js';
 
 
-describe('Teste de cadastrod e usuarios', () => {
+describe('Teste de cadastro de usuarios', () => {
     beforeEach(() => {
         CommonPages.visityPageRegister()
+    });
+
+    it('Registrar: Campos Vazios', () => {
+        RegisterPage.emptyField(data.fields.nameField);
+        RegisterPage.emptyField(data.fields.emailField);
+        RegisterPage.emptyField(data.fields.passField);
+
+        RegisterPage.clickBtn(data.btn.registerBtn)
+        RegisterPage.errorMsg(data.fields.errorName, data.msg.msgName)
+
     });
 
     it('Registrar: Nome Vazio', () => {
@@ -52,7 +62,7 @@ describe('Teste de cadastrod e usuarios', () => {
         RegisterPage.errorMsg(data.fields.errorName, data.msg.msgPassW);
     })
 
-    it('Registrar: Semha Incorreta', () =>{
+    it('Registrar: Senha Incorreta', () =>{
 
         RegisterPage.fillField(data.fields.nameField, data.regUser.nameUser);
         RegisterPage.fillField(data.fields.emailField, data.regUser.emailValid);
