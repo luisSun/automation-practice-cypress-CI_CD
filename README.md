@@ -8,9 +8,9 @@ Os testes cobrem cenários de **Login** e **Registro de Usuário** no site [Auto
 
 ## 🚀 Tecnologias Utilizadas
 
-- [Cypress](https://www.cypress.io/)
-- [Node.js](https://nodejs.org/)
-- [Faker.js](https://github.com/faker-js/faker) — para geração dinâmica de dados
+- Cypress
+- Node.js
+- Faker.js — para geração dinâmica de dados
 - JavaScript (ES6)
 
 ---
