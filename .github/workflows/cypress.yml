@@ -1,27 +1,31 @@
-
 name: Cypress Tests
 
-#Em que momento deve ser execultado
-
+# Quando o workflow será executado
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    branches: [master]
+    branches: [ master ]
 
-#Quais Jobs serao execultados
-jobs: 
-  #Job a ser feito na pipeline
+# Quais jobs serão executados
+jobs:
+  # Job principal da pipeline
   cypress-run:
-    #qual maquina sera execultada
+    # Máquina onde será executado
     runs-on: ubuntu-latest
 
     steps:
-      #Clone Projeto
+      # Clonar o projeto
       - name: Checkout/Clone Projeto
         uses: actions/checkout@v4
 
-      #execucao e conf do projeto e execulta as acoes
-      - name: Cypress run
-        uses: cypress-io/github-action@v6  
+      # Instalar dependências
+      - name: Instalar dependências
+        run: npm ci
+
+      # Rodar testes Cypress e enviar para o Dashboard
+      - name: Rodar testes Cypress no Dashboard
+        uses: cypress-io/github-action@v6
         with:
           record: true
         env:
