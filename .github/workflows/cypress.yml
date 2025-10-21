@@ -1,28 +1,36 @@
-
 name: Cypress Tests
 
-#Em que momento deve ser execultado
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    push: [main]
+    branches: [ main ]
 
-#Quais Jobs serao execultados
-jobs: 
-  #Job a ser feito na pipeline
+jobs:
   cypress-run:
-    #qual maquina sera execultada
     runs-on: ubuntu-latest
 
     steps:
-      #Clone Projeto
-      - name: Checkout/Clone Projeto
+      - name: Checkout do código
         uses: actions/checkout@v4
 
-      #execucao e conf do projeto e execulta as acoes
-      - name: Cypress run
-        uses: cypress-io/github-action@v6  
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
         with:
-          record: true
-        env:
-          CYPRESS_RECORD_KEY2: ${{ secrets.CYPRESS_RECORD_KEY }}
+          node-version: 18
 
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar testes Cypress
+        run: npx cypress run --reporter cypress-mochawesome-reporter
+
+      - name: Salvar resultados do teste (relatórios e screenshots)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-reports
+          path: |
+            cypress/reports
+            cypress/screenshots
+            cypress/videos
