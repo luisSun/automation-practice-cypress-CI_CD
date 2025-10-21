@@ -21,7 +21,7 @@ jobs:
 
       # Instalar dependências
       - name: Instalar dependências
-        run: npm ci
+        run: npm install
 
       # Rodar testes Cypress e enviar para o Dashboard
       - name: Rodar testes Cypress no Dashboard
