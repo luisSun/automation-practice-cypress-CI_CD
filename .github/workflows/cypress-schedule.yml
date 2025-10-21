@@ -1,0 +1,37 @@
+name: Cypress Tests - Schedule
+
+# Quando o workflow será executado
+on:
+  schedule:
+    # Roda todo dia às 8h da manhã (UTC)
+    - cron: "0,15,30,45 * * * *"
+
+# Quais jobs serão executados
+jobs:
+  # Job principal da pipeline
+  cypress-run:
+    # Máquina onde será executado
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clonar o projeto
+      - name: Checkout/Clone Projeto
+        uses: actions/checkout@v4
+
+      # Instalar dependências
+      - name: Instalar dependências
+        run: npm install
+
+      # Rodar testes Cypress e enviar para o Dashboard
+      - name: Rodar testes Cypress no Dashboard
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          
+      - name: Upload de relatórios
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: cypress/reports/html/ # ou o caminho real do relatório
