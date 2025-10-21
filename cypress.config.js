@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: "kkquya",
   e2e: {
     baseUrl: "https://automationpratice.com.br/",
     defaultCommandTimeout: 5000,

@@ -1,0 +1,28 @@
+
+name: Cypress Tests
+
+#Em que momento deve ser execultado
+on:
+  pull_request:
+    push: [main]
+
+#Quais Jobs serao execultados
+jobs: 
+  #Job a ser feito na pipeline
+  cypress-run:
+    #qual maquina sera execultada
+    runs-on: ubuntu-latest
+
+    steps:
+      #Clone Projeto
+      - name: Checkout/Clone Projeto
+        uses: actions/checkout@v4
+
+      #execucao e conf do projeto e execulta as acoes
+      - name: Cypress run
+        uses: cypress-io/github-action@v6  
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY2: ${{ secrets.CYPRESS_RECORD_KEY }}
+
