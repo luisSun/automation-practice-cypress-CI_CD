@@ -1,7 +1,7 @@
 
 name: Cypress Tests
 
-#Em que momento deve ser execultado
+#Em que momento deve ser execultado,
 on:
   pull_request:
     push: [main]
