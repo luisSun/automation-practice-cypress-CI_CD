@@ -1,7 +1,7 @@
 
 ---
 
-# 🧪 Projeto de Testes Automatizados com Cypress (CI/CD)
+# 🧪 Projeto de Testes com Cypress (CI/CD)
 > Pipeline de Integração e Entrega Contínua utilizando Cypress, GitHub Actions e Cypress Cloud.
 
 
