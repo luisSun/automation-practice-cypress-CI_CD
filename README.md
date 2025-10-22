@@ -3,7 +3,7 @@
 
 # 🧪 Projeto de Testes Automatizados com Cypress
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/SEU_USUARIO/SEU_REPOSITORIO/cypress.yml?branch=main\&label=Build%20%26%20Test\&logo=github)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/luisSun/automation-practice-cypress-CI_CD/cypress.yml?branch=main&label=Build%20%26%20Test&logo=github)
 ![Cypress Dashboard](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/SEU_PROJECT_ID/main\&style=flat\&logo=cypress)
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green?logo=node.js)
 ![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
