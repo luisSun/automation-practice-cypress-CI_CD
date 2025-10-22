@@ -1,10 +1,10 @@
 name: Cypress Tests - Schedule
 
-# Quando o workflow será executado
-on:
-  schedule:
-    # Roda todo dia às 8h da manhã (UTC)
-    - cron: "0,15,30,45 * * * *"
+###Quando o workflow será executado
+# on:
+#   schedule:
+#     #Roda todo dia às 8h da manhã (UTC)
+#     - cron: "0,15,30,45 * * * *"
 
 # Quais jobs serão executados
 jobs:
