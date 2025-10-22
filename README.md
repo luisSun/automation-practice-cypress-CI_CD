@@ -224,7 +224,7 @@ Comentado para não ocupar recursos e espaços na cloud.
 
 Os relatórios HTML são gerados com o **Mochawesome Reporter** e enviados como artefatos
 
-
+![Resultado](./images/resultcloud.png)
 ---
 
 ## ✍️ Autor
@@ -240,22 +240,5 @@ Os relatórios HTML são gerados com o **Mochawesome Reporter** e enviados como 
 Este projeto é de uso livre para fins educacionais, licenciado sob a **GNU GENERAL PUBLIC LICENSE v3.0**.
 
 ![Licença](https://img.shields.io/badge/License-GPLv3-blue.svg)
-
----
-
-### 🔧 **Como configurar os badges**
-
-1. Substitua:
-
-   * `SEU_USUARIO` → seu usuário GitHub
-   * `SEU_REPOSITORIO` → nome do repositório
-   * `SEU_PROJECT_ID` → ID do seu projeto no [Cypress Cloud Dashboard](https://cloud.cypress.io/)
-
-Exemplo:
-
-```md
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/luisafonso/cypress-tests/cypress.yml?branch=main)
-![Cypress Dashboard](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/abcd12/main)
-```
 
 ---
