@@ -1,12 +1,15 @@
 
 ---
 
-# 🧪 Projeto de Testes Automatizados com Cypress
+# 🧪 Projeto de Testes Automatizados com Cypress (CI/CD)
+> Pipeline de Integração e Entrega Contínua utilizando Cypress, GitHub Actions e Cypress Cloud.
+
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/luisSun/automation-practice-cypress-CI_CD/cypress.yml?branch=main&label=Build%20%26%20Test&logo=github)
-![Cypress Dashboard](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/SEU_PROJECT_ID/main\&style=flat\&logo=cypress)
+[![Cypress Dashboard](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/kkquya/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/kkquya)
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green?logo=node.js)
 ![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
+
 
 ---
 
@@ -119,24 +122,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout/Clone Projeto
-        uses: actions/checkout@v4
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Rodar testes Cypress no Dashboard
-        uses: cypress-io/github-action@v6
-        with:
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
-      - name: Upload de relatórios
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact
-          path: cypress/reports/html/
+       ...
 ```
 
 ---
@@ -228,22 +214,16 @@ Definida em **GitHub Secrets**.
 ✅ **Continuous Integration (CI)**
 A cada `push` ou `pull request`, os testes são executados automaticamente no GitHub Actions.
 
-✅ **Continuous Delivery (CD)**
-Com o cron configurado, os testes são agendados a cada 15 minutos — garantindo **monitoramento contínuo**.
+✅ **Continuous Delivery (CD)**  
+Com o cron configurado, os testes são executados a cada 15 minutos, garantindo **monitoramento contínuo**.  
+Comentado para não ocupar recursos e espaços na cloud. 
 
 ---
 
 ## 📸 Relatórios
 
-Os relatórios HTML são gerados com o **Mochawesome Reporter** e enviados como artefatos:
+Os relatórios HTML são gerados com o **Mochawesome Reporter** e enviados como artefatos
 
-```yaml
-- name: Upload de relatórios
-  uses: actions/upload-artifact@v4
-  with:
-    name: my-artifact
-    path: cypress/reports/html/
-```
 
 ---
 
